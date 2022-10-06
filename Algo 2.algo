@@ -1,0 +1,86 @@
+ ALGORITHM Arr
+
+ VAR 
+ tab1 : ARRAY_OF INTEGER[a];
+ tab2 : ARRAY_OF INTEGER[b];
+ i,j,k,m,sumc,sumd: INTEGER:=0;
+ 
+
+ BEGIN
+
+ read(a)
+ FOR i FROM 0 TO a-1 
+ read(tab1[i])
+ END_FOR
+
+ read(b)
+ FOR j FROM 0 TO b-1 
+ read(tab2[j])
+ END_FOR
+
+
+  FOR k FROM 0 TO tab.length-1 STEP 1 DO
+  
+     FOR m FROM 0 TO tab.length-1 STEP 1 DO
+
+         IF (tab[k]=tab[m] and ) THEN
+         sumc:=sumc+tab[k];
+         
+         ELSE 
+            sumd:=sumd+tab[m]
+         END_IF
+
+     END_FOR  
+
+    END_FOR
+ write("somme de nombres communs",sumc)
+ write("somme de nombres differents",sumd)
+ END 
+
+
+
+ALGORITHM Hashtab
+
+VAR
+tab1 : ARRAY_OF INTEGER[a];
+tab2: ARRAY_OF INTEGER[b];
+tab: ARRAY_OF INTEGER[a+b];
+hashtab:HASH_TABLE<INTEGER,INTEGER>;
+sumc,sumd,i,j,k;m;count:INTEGER:=0
+
+BEGIN
+
+read(a)
+FOR i FROM 0 TO a-1 
+read(tab1[i])
+END_FOR
+
+read(b)
+FOR j FROM 0 TO b-1 
+read(tab2[j])
+END_FOR
+
+tab:=concat(tab1,tab2);
+
+FOR k FROM 0 TO tab.length -1 STEP 1  DO
+       IF (htab.lookup(tab[i]) = TRUE) THEN
+           count := htab.get(tab[i]);
+           htab.insert(tab[i],count+1);
+       ELSE
+           htab.insert(tab[i],1);
+       END_IF
+   END_FOR
+
+
+FOR item in hashtab DO
+    IF (htab.get(item)=1) THEN
+        sumd=sumd+item;
+    ELSE 
+        sumc=sumc+(item*htab.get(item));
+    END_IF
+END_FOR
+
+write("somme de nombres communs",sumc)
+write("somme de nombres differents",sumd)
+
+END
